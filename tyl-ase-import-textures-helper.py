@@ -33,6 +33,10 @@ for m in bpy.data.materials:
               m.node_tree.nodes["Image Texture"].outputs['Color'],
               m.node_tree.nodes["Principled BSDF"].inputs['Base Color']
             )
+            m.node_tree.links.new(
+              m.node_tree.nodes["Image Texture"].outputs['Alpha'],
+              m.node_tree.nodes["Principled BSDF"].inputs['Alpha']
+            )
         
             # count materials edited
             num_mats_edited += 1
